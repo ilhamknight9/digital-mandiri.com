@@ -7,7 +7,7 @@
   <meta name="description" content="Karya Digital Mandiri membantu bisnis membangun website, landing page, web app, ERP, POS, AI Automation, Google Ads, dan SEO yang modern dan berorientasi hasil." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #2563eb;
@@ -34,7 +34,7 @@
     }
 
     body {
-      font-family: 'Manrope', sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--secondary);
       line-height: 1.7;
@@ -81,18 +81,16 @@
       font-size: 1.14rem;
     }
 
-    .brand-logo {
-      height: 52px;
-      width: auto;
-      display: block;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
       border-radius: 14px;
-      background: #000;
-      padding: 5px 8px;
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
-    }
-
-    .brand-text {
-      display: none;
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.26);
     }
 
     .nav-menu {
@@ -539,125 +537,6 @@
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     }
 
-    .lead-magnet {
-      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 48%, #dcfce7 100%);
-    }
-
-    .lead-magnet-box {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 36px;
-      padding: 44px;
-      display: grid;
-      grid-template-columns: 1fr 0.88fr;
-      gap: 34px;
-      align-items: center;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .lead-magnet-box::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.09);
-      right: -80px;
-      top: -80px;
-    }
-
-    .lead-magnet-content,
-    .lead-magnet-card {
-      position: relative;
-      z-index: 1;
-    }
-
-    .lead-magnet h2 {
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      line-height: 1.1;
-      letter-spacing: -0.065em;
-      margin-bottom: 16px;
-    }
-
-    .lead-magnet p {
-      color: #475569;
-      font-size: 1.04rem;
-      margin-bottom: 22px;
-    }
-
-    .check-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 16px;
-      margin: 22px 0 28px;
-    }
-
-    .check-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      color: #334155;
-      font-size: 0.94rem;
-    }
-
-    .check-item span {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      background: #dcfce7;
-      color: #16a34a;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-
-    .lead-magnet-card {
-      background: #0f172a;
-      color: white;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.18);
-    }
-
-    .lead-magnet-card h3 {
-      font-size: 1.45rem;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .audit-score {
-      display: grid;
-      gap: 12px;
-      margin: 18px 0;
-    }
-
-    .score-row {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 13px 14px;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-weight: 700;
-      color: #dbeafe;
-    }
-
-    .score-row b {
-      color: #86efac;
-    }
-
-    .mini-note {
-      color: #cbd5e1 !important;
-      font-size: 0.9rem !important;
-      margin: 16px 0 0 !important;
-    }
-
     .middle-cta {
       padding: 46px 0;
       background: white;
@@ -885,8 +764,8 @@
 
       .hero-grid,
       .highlight,
-      .lead-magnet-box,
       .middle-cta-box,
+      .contact-box {x,
       .contact-box {
         grid-template-columns: 1fr;
       }
@@ -933,13 +812,7 @@
         width: 100%;
       }
 
-      .check-grid {
-        grid-template-columns: 1fr;
-      }
-
       .highlight,
-      .lead-magnet-box,
-      .middle-cta-box,
       .contact-box {
         padding: 28px;
         border-radius: 26px;
@@ -955,12 +828,11 @@
   <nav class="navbar">
     <div class="container nav-wrap">
       <a href="#home" class="brand" aria-label="Karya Digital Mandiri">
-        <img class="brand-logo" src="data:image/webp;base64,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" alt="Logo Karya Digital Mandiri" />
-        <span class="brand-text">Karya Digital Mandiri</span>
+        <span class="brand-mark">KDM</span>
+        <span>Karya Digital Mandiri</span>
       </a>
       <div class="nav-menu">
         <a href="#layanan">Layanan</a>
-        <a href="#audit-gratis">Audit Gratis</a>
         <a href="#proses">Proses</a>
         <a href="#harga">Harga</a>
         <a href="#portfolio">Portofolio</a>
@@ -1072,39 +944,6 @@
         <div class="card result-card"><div class="icon">🧲</div><h3>Brand Lebih Dipercaya</h3><p>Website yang clean dan profesional membantu calon pelanggan lebih yakin sebelum membeli atau konsultasi.</p></div>
         <div class="card result-card"><div class="icon">🎯</div><h3>Iklan Lebih Terukur</h3><p>Google Ads dan Meta Ads dapat diarahkan ke halaman yang tepat dengan tracking konversi yang rapi.</p></div>
         <div class="card result-card"><div class="icon">🔁</div><h3>Follow-up Lebih Konsisten</h3><p>Lead dapat diarahkan ke WhatsApp, dicatat, dan ditindaklanjuti dengan alur yang lebih terstruktur.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="lead-magnet" id="audit-gratis">
-    <div class="container">
-      <div class="lead-magnet-box">
-        <div class="lead-magnet-content">
-          <div class="eyebrow">🎁 Lead Magnet Gratis</div>
-          <h2>Gratis Audit Website & Landing Page</h2>
-          <p>Sudah punya website, tapi belum banyak yang chat, isi form, atau closing? Kami bantu cek secara gratis agar website Anda lebih siap menghasilkan lead.</p>
-          <div class="check-grid">
-            <div class="check-item"><span>✓</span>Tampilan mobile</div>
-            <div class="check-item"><span>✓</span>Headline & penawaran</div>
-            <div class="check-item"><span>✓</span>CTA WhatsApp</div>
-            <div class="check-item"><span>✓</span>Struktur halaman</div>
-            <div class="check-item"><span>✓</span>SEO dasar</div>
-            <div class="check-item"><span>✓</span>Kecepatan loading</div>
-            <div class="check-item"><span>✓</span>Tracking iklan</div>
-            <div class="check-item"><span>✓</span>Potensi konversi</div>
-          </div>
-          <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20Audit%20Website%20%2F%20Landing%20Page%20Gratis.%0A%0ALink%20website%20saya%3A%20%0AJenis%20bisnis%3A%20%0ATujuan%20utama%3A%20" target="_blank" rel="noopener">Minta Audit Gratis via WhatsApp</a>
-        </div>
-        <div class="lead-magnet-card">
-          <h3>Contoh Insight yang Akan Anda Dapatkan</h3>
-          <div class="audit-score">
-            <div class="score-row"><span>CTA kurang terlihat</span><b>Prioritas</b></div>
-            <div class="score-row"><span>Headline belum spesifik</span><b>Perlu revisi</b></div>
-            <div class="score-row"><span>Form lead belum optimal</span><b>Potensi naik</b></div>
-            <div class="score-row"><span>Tracking WA belum rapi</span><b>Wajib cek</b></div>
-          </div>
-          <p class="mini-note">Audit awal diberikan secara singkat dan praktis, berisi poin-poin yang bisa langsung Anda perbaiki atau diskusikan lebih lanjut.</p>
-        </div>
       </div>
     </div>
   </section>
