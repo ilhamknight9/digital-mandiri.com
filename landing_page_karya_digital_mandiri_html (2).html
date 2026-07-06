@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karya Digital Mandiri | Solusi Digital All-in-One untuk Bisnis Anda</title>
+  <meta name="description" content="Karya Digital Mandiri membantu bisnis membangun website, landing page, web app, ERP, POS, AI Automation, Google Ads, dan SEO yang modern dan berorientasi hasil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --accent: #22c55e;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --soft-blue: #eff6ff;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.14rem;
+    }
+
+    .brand-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+      border-radius: 14px;
+      background: #000;
+      padding: 5px 8px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
+    }
+
+    .brand-text {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-weight: 600;
+      font-size: 0.94rem;
+      color: #334155;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: white;
+      border-color: var(--border);
+      color: var(--secondary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.24);
+    }
+
+    .btn-whatsapp:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 70px;
+      background: radial-gradient(circle at top left, #dbeafe 0, transparent 36%), radial-gradient(circle at 80% 20%, #dcfce7 0, transparent 28%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: white;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.86rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.45rem, 5vw, 4.65rem);
+      line-height: 1.04;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: #475569;
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 32px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .dashboard {
+      border-radius: 24px;
+      background: #0f172a;
+      padding: 20px;
+      color: white;
+      overflow: hidden;
+    }
+
+    .dash-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #94a3b8;
+      opacity: 0.7;
+    }
+
+    .dash-badge {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #86efac;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .metric small {
+      color: #cbd5e1;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 1.58rem;
+      margin-top: 6px;
+      letter-spacing: -0.04em;
+    }
+
+    .chat-preview {
+      background: white;
+      color: var(--secondary);
+      border-radius: 20px;
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .chat-line {
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: var(--soft-blue);
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+
+    .chat-line.alt {
+      background: #dcfce7;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 44px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      letter-spacing: -0.065em;
+      line-height: 1.12;
+      margin-bottom: 14px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--border);
+      color: #334155;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
+    }
+
+    .problem {
+      background: white;
+    }
+
+    .problem-grid,
+    .service-grid,
+    .why-grid,
+    .portfolio-grid,
+    .pricing-grid,
+    .audience-grid,
+    .result-grid,
+    .case-grid,
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .problem-grid,
+    .service-grid,
+    .why-grid,
+    .portfolio-grid,
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.045);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-blue);
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .services {
+      background: var(--bg);
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--primary), #0f172a);
+      color: white;
+      border-radius: 36px;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.06em;
+      margin-bottom: 14px;
+    }
+
+    .highlight p {
+      color: #dbeafe;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 26px;
+      padding: 24px;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--primary);
+      transform: scale(1.02);
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      margin: 14px 0;
+    }
+
+    .price small {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .audience {
+      background: white;
+    }
+
+    .result-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .lead-magnet {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 48%, #dcfce7 100%);
+    }
+
+    .lead-magnet-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 0.88fr;
+      gap: 34px;
+      align-items: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-magnet-box::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.09);
+      right: -80px;
+      top: -80px;
+    }
+
+    .lead-magnet-content,
+    .lead-magnet-card {
+      position: relative;
+      z-index: 1;
+    }
+
+    .lead-magnet h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.1;
+      letter-spacing: -0.065em;
+      margin-bottom: 16px;
+    }
+
+    .lead-magnet p {
+      color: #475569;
+      font-size: 1.04rem;
+      margin-bottom: 22px;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin: 22px 0 28px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: #334155;
+      font-size: 0.94rem;
+    }
+
+    .check-item span {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: #dcfce7;
+      color: #16a34a;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .lead-magnet-card {
+      background: #0f172a;
+      color: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.18);
+    }
+
+    .lead-magnet-card h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .audit-score {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .score-row {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 13px 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 700;
+      color: #dbeafe;
+    }
+
+    .score-row b {
+      color: #86efac;
+    }
+
+    .mini-note {
+      color: #cbd5e1 !important;
+      font-size: 0.9rem !important;
+      margin: 16px 0 0 !important;
+    }
+
+    .middle-cta {
+      padding: 46px 0;
+      background: white;
+    }
+
+    .middle-cta-box {
+      background: linear-gradient(135deg, #0f172a, #2563eb);
+      color: white;
+      border-radius: 32px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .middle-cta-box h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.12;
+      letter-spacing: -0.06em;
+      margin-bottom: 10px;
+    }
+
+    .middle-cta-box p {
+      color: #dbeafe;
+      max-width: 680px;
+    }
+
+    .case-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-tag {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--soft-blue);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .case-card strong {
+      display: block;
+      margin-top: 14px;
+      margin-bottom: 4px;
+      color: var(--secondary);
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.045);
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .testimonial-card p {
+      color: #475569;
+      margin-bottom: 18px;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #38bdf8);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .client b {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .client small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .faq {
+      background: white;
+    }
+
+    .faq-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 22px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--secondary);
+    }
+
+    details p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding-bottom: 48px;
+    }
+
+    .contact-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .contact-form {
+      background: var(--bg);
+      border-radius: 24px;
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 13px 14px;
+      margin-bottom: 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      box-shadow: 0 16px 35px rgba(34, 197, 94, 0.32);
+      transition: 0.25s ease;
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    @media (max-width: 920px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .highlight,
+      .lead-magnet-box,
+      .middle-cta-box,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid,
+      .service-grid,
+      .why-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .audience-grid,
+      .result-grid,
+      .case-grid,
+      .testimonial-grid,
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 62px;
+      }
+
+      .hero-stats,
+      .problem-grid,
+      .service-grid,
+      .why-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .audience-grid,
+      .result-grid,
+      .case-grid,
+      .testimonial-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .nav-wrap {
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .check-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight,
+      .lead-magnet-box,
+      .middle-cta-box,
+      .contact-box {
+        padding: 28px;
+        border-radius: 26px;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Karya Digital Mandiri">
+        <img class="brand-logo" src="data:image/webp;base64,UklGRr4lAABXRUJQVlA4ILIlAAAwlwCdASqkAR4BPmEsk0ckIiIjoAQCdLoB+AAFz1uABTEUD9ONJCRKiBwM+zSAA/vDXfoRE4wxE3+4+jSOk0e3exukQevXjiDpqwUDZ7LF5kq5ZpVKgQLKCwea0JXhTzvq78qqYcvkRKOa9UbmoLcP87+aUt2OtAj1rM01ZVjtK0/qUqdfT/GX+m1EyPK4Hh8GRlp0T2jAlENzGv+JKSx6l+RYug3Fsv/9qh4a5n3scFsSVdoVtuvIaTs2S8a3JjA3r1BgCnuY3pmm6ieEMvoFSpJtFUF+uMAxyrrsz3zZF2hAbESVgnykM35Uh04kJxjIf+CbwTx1MVJZhPe7d5XpRyJ8+KdYPlwzU4Ay4kIuK/vCmbZex9lUlOSjKpTq9KN2kXyDZFjjM7U1GcflFCNbTx65G+Qq8l1lbHTo5jseAFd7DBuyOQYMj+ZlbEU2f/CaSuIZNn0he4Xt7h2oL9+P0KLc6cMX73GcjmVTzuuYbXpeSgXDNbyqUEg35dqqxq2UooHcb6ouIoUY/MBcqbXkTa2nqUqqv5d2/yj4O0QIDPVdQ6wzpA71DwXgw1sfYgV48XSb6FNF+/xKUW/4Buz+ni33SPHVlCsl+9scsGl5+e7oZ4DVRAp/tuBif2oFRuQFB6pUR82rBsrwIk/LSx3udR98JpXcdx39BrL9d7WF9Vv+PiAOV6Lj5l+qs65Kohf68d3mZkTiCCj6OyEqjB/JTWhxIdBPMzJbfxP1H3gpBTx3D/Ch8rEHL3ghWjfYZkTmR5O1Nkvr62yvGIbVqPiLQwPViscdzItAgu8ou8UfLmV/GM+c41DOvpA3SHMBCfLTTyYL0nUli66jrYAG0W3L6azCxZIxYFDUzYxAkiqZfKMBgrsF1a0ht30IdRYbZpTfwM9Ys0Z5kY2/yrJm/MGiy4iVUyfBgnpAvrhqKPHkVCpEuToPZAG2sLdFqSqXc6RYBTpkU90ofGlalD8f8XxjS23Dd7gGCgFuLmFxbKE9H4fLEb6L/CFeghtnnlSpRx+GuwLL0Fuy2GLRGdPzEgDDgYwYY/WBmyH17eQ6zctGGg8Q2lg8niBwL6T8E6yJuCBQ37pW/z/Ut5MyrKBRWBVjEpJNXXs8NnKuWqQ3meHOO+WCOdDK6iCWPzvHQxZg3bCVVRLJ/iMaPmNMmh+Px2YsEzKQRBpx2s2Yuqru3m2c96zKHSJdFAlHMR4mHZ7/Ex+pcUbQfJ/7b00WfgBoXp6IeB22ZCy/b7A664PyaFXrdKAsaEsiYNidL+9br7Zve8RKUtC0N57HLM36ImWsDY8+IHFDYNmblGpwFRSSoCljDSp7v2Gvc7pClo8FMFwgZqyuLdmv/k32BjYy4AkmfhgO2pXE9sMu3II6xMuQ7mMvChPBJT21l3x3fKT1pfLCjH/9gk0nKd80SClUdE1UY6nKA0ePaVoYGRrAvFSPE3tOZEjqx7h/BxEiSeSHun6xk6BYg4ADorDqzdp5a4zIsx1JeIFfPxYIG+dZvfKP/WffB/oC25uG1cQp9DL9u+Ib2C5tf6ZblCg6h1oJbTPi+BMeHrme8c/3L3YzzM5JNhOxTbv6XqSWI6yUoZOXlAogcJ9hJZ1Rl0mcL2Aii92ARmEr1V2n0dmDRwOy6Fk0BHFgj2VsUj0izte/Is8UdUYc7GnAL1W38+X++RdXHZo5gJ3OBV6tMbnvdJjpmEUvMzIwpKG72VjRQGZ6+vVIftbIve5FqCRbavC38CEzH6DgGCiImt03Ti4GZ8vQmHQ7eWo3mSiqm2rlQVKvgqIwSxnKm3wuHF7ehQgm5toLCyDrJJL5HZM208UDywkRP5gqPfwhGrTWeDhzS7WKLFzoos0+dkCNkRq0TTqwGWGY6s4HGbPceB27JnwU4tBfJji2UnjRBgBdRZ7g1u3p4g9VjU6dpYUqSGgaWnzV2RPqxrVgsav+H+1C4C6psDDmk3qQchdp4N64ND2dVfYFmF4MPMZgDfyr1u0Z/PVph7ouZShD1r3e8+TEEdofSSVHN6m8ta8gYpJ0g0xs6cpqWwQbFsm5IqaLXrmCYbvCtmftnSi1ZqQFt5+Dd3jQHF5/aCw9PpZ3Qiw9RJ7E0aOkHTbRYvhBlQnyXCcZSsxuUg7t6f4SDFQRXcZuJ3ys7hh0WoVgD6TZL0XhsUF0xECQbFhNfT9Mdb2qDCLCQ1jAW6spcexZJM43XcA2sULS92iokArBjLz5rbVIj13hw6s54u4oxZ+MtQBRqYvmqc1PH7kDcIaOnMK/82PA4BgoviRK13RA1C7kbdaGpFlos00rvBfUIQPxZKt6ikxVlMI7Gexu3suYvZKlGwIhpl87O7dTSkhWeeKwTmhaX0BJw6Zj9go8Y6INUyUjj2oQ/f3ja0yTXb3/ZSs0t0c/25GvIfdC6Bbo5X+6OayP8IzAupx8X+fHfCgoDUBy8k4t9DZVf74NlGeRwaDZCd59c+z73sF/z7/7TrBaRF1zOGWFyRUSl3x+SRWbpMkltCohRTaNI6KL7n6v1L7fGL/7U/h+ocAa2Ww9/FdCLMRRqPL/5+BZLuOWrqf1flJLSBK0Ag+J+9XhMfss/4e0h86J9VhqjDPVKqeW69z9XLSFtJwJx4IwpAqCYE2pNdFx6szDe0S8VP9CxlaIoVNEly+wkbKxkI/p3MDxQsq7+6cdx0Kx+hHXAkrkEiHcAR3en2HptFTXI6buUWivjLcJJDH0NKPIT+hWUHMzRJjwIH1vRFmcH67wlOZ25q4LJ45tmCQH8mWtRBTuAl8uqaLRR27nmBU5jleDbZBnt8TFrQCCWGLl2iFB1P/RI25eB/5S6zdgZGZ2sK8ct2+W5enGrzO1g4BgyJdbkxP9BGMEFaTEHRdI7AiI7GVgAZNDlVLhkv1E5XZn/TElTQxDwaO38qyC6HViiKMQ35j4K7PbKh4qmRZHfPkwyDm5jYDbdlZBrPM3mHw8S594nzXHt6zOfmO9VdhwSzJEW/Ej7EvgY8ByCVsqU6QBrD3Hus1zyCMeZ/oA8YM7ZJB3RAqgKGwImu9czVJ2L9grBu55Hn1G2axCgoxarHO2xDhGfJi72xs1N1IXRwtP/qXTTLf5sfrELFSQMQSFajR4XKloieDhchSvpStKnN4U31Y0FZxId/j0jyMCOAzXciWVfdCk2DZgM6qsuOV++9PYz0U8Z31D/Q0sLxbf5mxhgwusDiqzRKsotbw+Nn/MEWxN4+0n6HMQOB0Q+XDrNEoI67ez9XyKaUroN8dLo/Z6PpnDgGCjgEyBfcUe45lA0NcyLUuTghp7GZ7WDX/5DFbtxTBvSVt3oYgjo2fvb2iqDvU4yIwtjRbE73U9SvYL1nThIcsklViN+qbagNcNRAW6co0GRsMhIP6R7x8VCgmvCV7ZiZmNPDTpTxiwfsxDSKljYWdT0HSMznHPa/1vhWEp16flDOfnYTbmCR58bWGPs94tZaGSxaoMAj4llFLdTpUeWktWa8SJXkH3De7NpXmNUwPH4/1Tz1tKD8UfGeReYwW+fg1XVbCqGlyO2GTrsxTEXX9wU3LTn0Bz6BaE2lZiMJ1xqeCzH1jJcn8tB5ocJhnlBDo2h3Tnp/XHvUOAICm83w1MDRcTx9x7gx3OD2UweNwjtJmZwMnfjzSqyyqVojqUn09QFZWOFU5pdvuYBgoxrq367YHCz85UpmhpeS6xz/i1PyP4A4FZe4VFuNMO7ZhH3VKoHuTWY8UWuu39hD4y9XfD/brk+hXS1gT7qAMKFvOkc5A4KMqr8JFTDqkQQ+Qt3OvyaWM/pmS4Neulv58o3yD0EHaFyIAdnSS7DtQauFNxx7vAOVc4dwTVm0eaQ8qUHGJNsLJWjbQHi5STp/WLqiLiE9nxZHRX3J3WQ9QhtbVwuG6DQKNbvj1F4XPqJRqJpiR0b9CQ+SfMkWDEPaFNo75flht7mc+T2A7MhfeM1RqiSLCT5JJbXJaRi8MTJbaxR/YNBTIKBh6hUJ0Nm7MkLZl/JYBgomxp+6ZRlpzZM4e2ZzuoV1QGKF9Tu1YXgRJswEQ/FmOJyEZhiDEo9ZQkdvITlcc2R2+hS0WoR2GqiMQX+ofS6cgLXn1s//C0koD5QUGAkwZjVPKN/73KlIf+IS4vJzg8JY/0F6xv8Ro9SdgLqrq6nWtKbw87YorhsA3OMK0RjYUtdvzN6II/3V0JRdEk7qCsN+G/xycthBK6x+27JiHhS81Kt0vnkGzx8BjxIa6OzCDKWGQxYMCMq0B1mA4yO1bOOXv9Z2ut1CjJIhKFh40GLDJ6xg0GUJLKuHvyzQW19p1s+Tqsuhxk8P6UfjjXcZBB6lXkx6aeHXz7vYBgowAN3Wm9oqsSwgM7+cBD6D95HDA8Y2u7Iwr0IFqh52wDKMnTBmLOHwK2mUkrhNYZNNzjWwct3zfEO6cZwHZxscqz8ekfJnuZN4GLBdNvVlOXcb71d8zEAb+yagpnY4mrq2CjAMrAgYa9xWeaRFqNB34vYe9yVCKXjzHDplLQUk0E1BymEt3iyHDyJwaKbPw6Iys+vGIVsy+dysynWQL3sR0ErdY2aNFVFDTEri3e/vuJzEfPIjgGDMCpNQ/f2s2ZKCipkD7I1+hRdUbAAM7oAU2rxm6EyNkVWAHRzOCGMoAh1BdAJr5CmOqubxe+spAtv1V8pm1WncOerN7V/Sm8rGWD95QzDlKmZ40SSvEKJ0eBsE4btb+PP59q2txgv5T4cCJmQ8x0zctRZGFWeADOnla+YCeLwUbc3vEEgHkqweRLiOVD+8PJGygUqYWbDaawGrqDDFXCz6Uqqw+KhGVnhkV56GoQC6kzOblFG3+Xu7h07Bgpuajk5WPpCTxXzFO0mLuXrqWGDLbCKcyZgUz+rt4BgpzDHsM61UV/6Kta67/dRY9/+Go5sRq88oxQAAA" alt="Logo Karya Digital Mandiri" />
+        <span class="brand-text">Karya Digital Mandiri</span>
+      </a>
+      <div class="nav-menu">
+        <a href="#layanan">Layanan</a>
+        <a href="#audit-gratis">Audit Gratis</a>
+        <a href="#proses">Proses</a>
+        <a href="#harga">Harga</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20digital%20untuk%20bisnis%20saya." target="_blank" rel="noopener">Chat WhatsApp</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">🚀 Website • Aplikasi • AI • Digital Marketing</div>
+        <h1>Solusi Digital <span>All-in-One</span> untuk Bisnis Anda</h1>
+        <p>Bangun website profesional, landing page yang menghasilkan lead, aplikasi web custom, ERP, POS, AI Automation, hingga strategi Google Ads yang membantu bisnis tumbuh lebih cepat dan efisien.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#kontak">Konsultasi Gratis</a>
+          <a class="btn btn-outline" href="#layanan">Lihat Layanan</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20diskusi%20tentang%20website%2Faplikasi%2Fmarketing%20untuk%20bisnis%20saya." target="_blank" rel="noopener">Hubungi Ilham</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>360°</strong><span>Solusi digital lengkap</span></div>
+          <div class="stat"><strong>Lead</strong><span>Fokus ke konversi</span></div>
+          <div class="stat"><strong>Support</strong><span>Pendampingan proyek</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="dashboard">
+          <div class="dash-top">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="dash-badge">Live Digital System</div>
+          </div>
+          <div class="metric-grid">
+            <div class="metric"><small>Website & LP</small><b>Ready</b></div>
+            <div class="metric"><small>AI Assistant</small><b>24/7</b></div>
+            <div class="metric"><small>Google Ads</small><b>Growth</b></div>
+            <div class="metric"><small>ERP / POS</small><b>Custom</b></div>
+          </div>
+          <div class="chat-preview">
+            <div class="chat-line">Halo, bisnis Anda butuh website, aplikasi, atau iklan digital?</div>
+            <div class="chat-line alt">KDM siap bantu dari strategi sampai launching 🚀</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Dipercaya untuk Berbagai Kebutuhan Bisnis</h2>
+        <p>Kami membantu banyak jenis bisnis membangun fondasi digital yang lebih rapi, modern, dan siap menghasilkan.</p>
+      </div>
+      <div class="pill-row">
+        <span class="pill">Dealer Mobil</span>
+        <span class="pill">Properti</span>
+        <span class="pill">UMKM</span>
+        <span class="pill">Retail</span>
+        <span class="pill">Pabrik</span>
+        <span class="pill">Sekolah</span>
+        <span class="pill">Jasa Profesional</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience" id="cocok-untuk">
+    <div class="container">
+      <div class="section-head">
+        <h2>Solusi Digital Ini Cocok untuk Bisnis Seperti Anda</h2>
+        <p>Apapun tahap bisnisnya, kami bantu pilih solusi yang paling masuk akal: tidak berlebihan, tidak asal murah, tapi tepat guna.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="card"><div class="icon">👨‍💼</div><h3>Owner UMKM</h3><p>Ingin bisnis terlihat lebih profesional, punya website, dan mulai mendapatkan calon pelanggan dari online.</p></div>
+        <div class="card"><div class="icon">🚗</div><h3>Dealer & Sales</h3><p>Butuh landing page promosi yang fokus ke lead WhatsApp, test drive, simulasi kredit, dan tracking iklan.</p></div>
+        <div class="card"><div class="icon">🏭</div><h3>Perusahaan & Pabrik</h3><p>Ingin merapikan proses kerja melalui ERP, HR, payroll, inventory, POS, CRM, atau dashboard monitoring.</p></div>
+        <div class="card"><div class="icon">🏘️</div><h3>Properti & Real Estate</h3><p>Membutuhkan landing page modern untuk project perumahan, cluster, ruko, dan campaign digital marketing.</p></div>
+        <div class="card"><div class="icon">🛍️</div><h3>Retail & E-Commerce</h3><p>Ingin membuat toko online, katalog produk, checkout, payment gateway, dan database pelanggan.</p></div>
+        <div class="card"><div class="icon">🤖</div><h3>Bisnis yang Mau Otomatis</h3><p>Butuh AI chatbot, WhatsApp automation, auto follow-up, dan sistem yang membantu tim bekerja lebih cepat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="container">
+      <div class="section-head">
+        <h2>Bisnis Sudah Jalan, Tapi Sistem Digitalnya Belum Maksimal?</h2>
+        <p>Banyak bisnis punya produk bagus, tapi kehilangan peluang karena website, sistem, iklan, dan follow-up belum terintegrasi dengan baik.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="card"><div class="icon">📉</div><h3>Website Tidak Menghasilkan Lead</h3><p>Tampilan ada, tapi belum diarahkan untuk membuat pengunjung klik WhatsApp atau mengisi form.</p></div>
+        <div class="card"><div class="icon">🧩</div><h3>Operasional Masih Manual</h3><p>Data penjualan, stok, absensi, dan laporan masih tersebar sehingga sulit dipantau.</p></div>
+        <div class="card"><div class="icon">💸</div><h3>Iklan Kurang Efektif</h3><p>Budget sudah keluar, tapi landing page dan tracking belum optimal untuk konversi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Hasil yang Bisa Anda Dapatkan</h2>
+        <p>Tujuannya bukan cuma punya website bagus, tapi punya aset digital yang benar-benar membantu bisnis bergerak.</p>
+      </div>
+      <div class="result-grid">
+        <div class="card result-card"><div class="icon">📲</div><h3>Lebih Banyak Lead Masuk</h3><p>Landing page, CTA WhatsApp, form, dan tracking dibuat agar pengunjung lebih mudah menghubungi Anda.</p></div>
+        <div class="card result-card"><div class="icon">📊</div><h3>Data Lebih Mudah Dipantau</h3><p>Transaksi, stok, absensi, pelanggan, dan performa campaign dapat dirapikan dalam sistem yang jelas.</p></div>
+        <div class="card result-card"><div class="icon">⚡</div><h3>Proses Kerja Lebih Efisien</h3><p>Aktivitas manual bisa dikurangi dengan sistem web app, automation, dan dashboard sesuai kebutuhan.</p></div>
+        <div class="card result-card"><div class="icon">🧲</div><h3>Brand Lebih Dipercaya</h3><p>Website yang clean dan profesional membantu calon pelanggan lebih yakin sebelum membeli atau konsultasi.</p></div>
+        <div class="card result-card"><div class="icon">🎯</div><h3>Iklan Lebih Terukur</h3><p>Google Ads dan Meta Ads dapat diarahkan ke halaman yang tepat dengan tracking konversi yang rapi.</p></div>
+        <div class="card result-card"><div class="icon">🔁</div><h3>Follow-up Lebih Konsisten</h3><p>Lead dapat diarahkan ke WhatsApp, dicatat, dan ditindaklanjuti dengan alur yang lebih terstruktur.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lead-magnet" id="audit-gratis">
+    <div class="container">
+      <div class="lead-magnet-box">
+        <div class="lead-magnet-content">
+          <div class="eyebrow">🎁 Lead Magnet Gratis</div>
+          <h2>Gratis Audit Website & Landing Page</h2>
+          <p>Sudah punya website, tapi belum banyak yang chat, isi form, atau closing? Kami bantu cek secara gratis agar website Anda lebih siap menghasilkan lead.</p>
+          <div class="check-grid">
+            <div class="check-item"><span>✓</span>Tampilan mobile</div>
+            <div class="check-item"><span>✓</span>Headline & penawaran</div>
+            <div class="check-item"><span>✓</span>CTA WhatsApp</div>
+            <div class="check-item"><span>✓</span>Struktur halaman</div>
+            <div class="check-item"><span>✓</span>SEO dasar</div>
+            <div class="check-item"><span>✓</span>Kecepatan loading</div>
+            <div class="check-item"><span>✓</span>Tracking iklan</div>
+            <div class="check-item"><span>✓</span>Potensi konversi</div>
+          </div>
+          <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20Audit%20Website%20%2F%20Landing%20Page%20Gratis.%0A%0ALink%20website%20saya%3A%20%0AJenis%20bisnis%3A%20%0ATujuan%20utama%3A%20" target="_blank" rel="noopener">Minta Audit Gratis via WhatsApp</a>
+        </div>
+        <div class="lead-magnet-card">
+          <h3>Contoh Insight yang Akan Anda Dapatkan</h3>
+          <div class="audit-score">
+            <div class="score-row"><span>CTA kurang terlihat</span><b>Prioritas</b></div>
+            <div class="score-row"><span>Headline belum spesifik</span><b>Perlu revisi</b></div>
+            <div class="score-row"><span>Form lead belum optimal</span><b>Potensi naik</b></div>
+            <div class="score-row"><span>Tracking WA belum rapi</span><b>Wajib cek</b></div>
+          </div>
+          <p class="mini-note">Audit awal diberikan secara singkat dan praktis, berisi poin-poin yang bisa langsung Anda perbaiki atau diskusikan lebih lanjut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="section-head">
+        <h2>Layanan Utama Karya Digital Mandiri</h2>
+        <p>Satu partner untuk kebutuhan website, aplikasi bisnis, otomatisasi, dan pemasaran digital.</p>
+      </div>
+      <div class="service-grid">
+        <div class="card"><div class="icon">🌐</div><h3>Website Company Profile</h3><p>Website profesional untuk membangun kredibilitas dan kepercayaan calon pelanggan.</p><ul><li>Responsive</li><li>SEO dasar</li><li>WhatsApp CTA</li></ul></div>
+        <div class="card"><div class="icon">🎯</div><h3>Landing Page</h3><p>Halaman promosi yang fokus untuk menghasilkan lead, chat WhatsApp, dan penjualan.</p><ul><li>Copywriting konversi</li><li>CTA WhatsApp</li><li>Tracking iklan</li></ul></div>
+        <div class="card"><div class="icon">🛒</div><h3>E-Commerce</h3><p>Toko online yang mudah dikelola untuk katalog produk, checkout, dan pembayaran.</p><ul><li>Katalog produk</li><li>Checkout</li><li>Payment gateway</li></ul></div>
+        <div class="card"><div class="icon">💻</div><h3>Web App Custom</h3><p>Aplikasi berbasis web yang dibuat sesuai kebutuhan proses bisnis Anda.</p><ul><li>Dashboard admin</li><li>Role user</li><li>Database online</li></ul></div>
+        <div class="card"><div class="icon">🏢</div><h3>ERP, POS & HR</h3><p>Sistem untuk mengelola stok, transaksi, payroll, cabang, laporan, dan operasional.</p><ul><li>Inventory</li><li>Multi cabang</li><li>Laporan real-time</li></ul></div>
+        <div class="card"><div class="icon">🤖</div><h3>AI Automation</h3><p>Otomatisasi customer service, follow-up lead, dan proses kerja menggunakan AI.</p><ul><li>AI chatbot</li><li>WhatsApp automation</li><li>Lead qualification</li></ul></div>
+        <div class="card"><div class="icon">📈</div><h3>Google Ads</h3><p>Iklan Google yang dirancang untuk menjangkau calon pelanggan dengan niat beli tinggi.</p><ul><li>Search Ads</li><li>Remarketing</li><li>Conversion tracking</li></ul></div>
+        <div class="card"><div class="icon">🔎</div><h3>SEO</h3><p>Optimasi website agar lebih mudah ditemukan di Google secara organik.</p><ul><li>Keyword research</li><li>On-page SEO</li><li>Technical SEO</li></ul></div>
+        <div class="card"><div class="icon">🛠️</div><h3>Maintenance & Support</h3><p>Pendampingan teknis agar website dan sistem tetap aman, cepat, dan stabil.</p><ul><li>Backup</li><li>Update</li><li>Monitoring</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="middle-cta">
+    <div class="container">
+      <div class="middle-cta-box">
+        <div>
+          <h2>Masih Bingung Mulai dari Website, Aplikasi, atau Iklan Dulu?</h2>
+          <p>Konsultasi dulu saja. Ceritakan kondisi bisnis Anda sekarang, nanti kami bantu arahkan solusi yang paling prioritas dan realistis.</p>
+        </div>
+        <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20gratis%20untuk%20menentukan%20kebutuhan%20digital%20bisnis%20saya." target="_blank" rel="noopener">Konsultasi Gratis</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="highlight">
+        <div>
+          <h2>Kami Bukan Sekadar Membuat Website. Kami Bantu Bisnis Anda Punya Sistem Digital yang Bekerja.</h2>
+          <p>Mulai dari strategi, desain, development, tracking, sampai optimasi konversi. Semua dibuat agar bisnis Anda terlihat profesional dan lebih siap bertumbuh.</p>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Yang bisa kami bantu:</strong></p>
+          <br>
+          <p>✅ Menarik calon pelanggan baru</p>
+          <p>✅ Merapikan sistem operasional</p>
+          <p>✅ Meningkatkan efisiensi tim</p>
+          <p>✅ Membuat proses follow-up lebih otomatis</p>
+          <p>✅ Menyiapkan bisnis untuk scale up</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proses">
+    <div class="container">
+      <div class="section-head">
+        <h2>Proses Kerja yang Mudah & Transparan</h2>
+        <p>Setiap proyek kami jalankan secara terarah agar hasilnya sesuai kebutuhan bisnis.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Konsultasi</h3><p>Kami memahami kebutuhan, target, dan masalah utama bisnis Anda.</p></div>
+        <div class="step"><h3>Perencanaan</h3><p>Kami susun solusi, fitur, struktur halaman, dan estimasi pengerjaan.</p></div>
+        <div class="step"><h3>Development</h3><p>Website atau aplikasi mulai dibangun sesuai scope yang disepakati.</p></div>
+        <div class="step"><h3>Testing</h3><p>Semua halaman, fitur, form, tombol WA, dan tracking dicek sebelum launching.</p></div>
+        <div class="step"><h3>Go Live</h3><p>Website atau aplikasi dipublikasikan menggunakan domain resmi bisnis Anda.</p></div>
+        <div class="step"><h3>Support</h3><p>Kami tetap mendampingi setelah proyek selesai agar sistem berjalan optimal.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="harga">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pilihan Paket Awal</h2>
+        <p>Harga dapat disesuaikan dengan kebutuhan, fitur, dan tingkat kompleksitas proyek.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="card pricing-card">
+          <h3>Landing Page</h3>
+          <div class="price">Mulai Rp1,5jt</div>
+          <p>Cocok untuk promo produk, dealer mobil, properti, jasa, dan campaign iklan.</p>
+          <ul><li>Desain modern</li><li>Mobile friendly</li><li>CTA WhatsApp</li><li>Form lead</li></ul>
+          <br>
+          <a class="btn btn-outline" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20paket%20Landing%20Page." target="_blank" rel="noopener">Tanya Paket</a>
+        </div>
+        <div class="card pricing-card featured">
+          <h3>Website Bisnis</h3>
+          <div class="price">Mulai Rp3,5jt</div>
+          <p>Cocok untuk company profile, jasa profesional, sekolah, kontraktor, dan perusahaan.</p>
+          <ul><li>Hingga 10 halaman</li><li>SEO dasar</li><li>WhatsApp integration</li><li>Training penggunaan</li></ul>
+          <br>
+          <a class="btn btn-primary" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20paket%20Website%20Bisnis." target="_blank" rel="noopener">Konsultasi Sekarang</a>
+        </div>
+        <div class="card pricing-card">
+          <h3>Web App / Sistem</h3>
+          <div class="price">Mulai Rp15jt</div>
+          <p>Cocok untuk POS, ERP, HR, CRM, dashboard, dan aplikasi custom perusahaan.</p>
+          <ul><li>Analisis kebutuhan</li><li>Database online</li><li>Role user</li><li>Dashboard admin</li></ul>
+          <br>
+          <a class="btn btn-outline" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20diskusi%20tentang%20Web%20App%20atau%20sistem%20bisnis." target="_blank" rel="noopener">Diskusi Sistem</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Studi Kasus Mini</h2>
+        <p>Beberapa contoh pendekatan solusi berdasarkan masalah yang sering dialami klien.</p>
+      </div>
+      <div class="case-grid">
+        <div class="card case-card">
+          <span class="case-tag">Landing Page Dealer</span>
+          <h3>Dari Traffic Menjadi Chat WhatsApp</h3>
+          <strong>Masalah</strong>
+          <p>Banyak orang klik iklan, tapi tidak lanjut chat karena halaman kurang meyakinkan.</p>
+          <strong>Solusi</strong>
+          <p>Buat LP khusus promo dengan CTA jelas, simulasi kredit, testimoni, dan tracking klik WA.</p>
+          <strong>Hasil yang dituju</strong>
+          <p>Lead lebih mudah masuk, dipantau, dan difollow-up oleh sales.</p>
+        </div>
+        <div class="card case-card">
+          <span class="case-tag">POS Multi Cabang</span>
+          <h3>Owner Bisa Pantau Bisnis Lebih Rapi</h3>
+          <strong>Masalah</strong>
+          <p>Stok, omzet, dan laporan cabang masih dicatat manual sehingga rawan salah.</p>
+          <strong>Solusi</strong>
+          <p>Sistem POS dengan role user, laporan real-time, stok, supplier, HPP, dan margin.</p>
+          <strong>Hasil yang dituju</strong>
+          <p>Owner bisa ambil keputusan lebih cepat berdasarkan data yang lebih jelas.</p>
+        </div>
+        <div class="card case-card">
+          <span class="case-tag">AI Automation</span>
+          <h3>Respon Calon Customer Lebih Cepat</h3>
+          <strong>Masalah</strong>
+          <p>Calon pelanggan sering bertanya di luar jam kerja dan follow-up tidak konsisten.</p>
+          <strong>Solusi</strong>
+          <p>AI assistant untuk menjawab FAQ, mengarahkan ke WhatsApp, dan membantu kualifikasi lead.</p>
+          <strong>Hasil yang dituju</strong>
+          <p>Customer mendapatkan respon awal lebih cepat sebelum masuk ke tim sales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contoh Solusi yang Bisa Kami Bangun</h2>
+        <p>Portofolio dan studi kasus dapat disesuaikan dengan kebutuhan industri Anda.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="card"><div class="icon">🚗</div><h3>Dealer Otomotif</h3><p>Landing page Toyota, Honda, Daihatsu, Mitsubishi, Suzuki, BYD, dan Wuling dengan CTA WhatsApp sales.</p></div>
+        <div class="card"><div class="icon">🏘️</div><h3>Properti</h3><p>Landing page properti untuk perumahan, cluster, ruko, dan project real estate.</p></div>
+        <div class="card"><div class="icon">🏭</div><h3>Manufaktur</h3><p>Sistem HR, payroll, absensi, inventory, produksi, dan laporan operasional.</p></div>
+        <div class="card"><div class="icon">🧾</div><h3>POS Multi Cabang</h3><p>Sistem kasir, stok, supplier, laporan omzet, HPP, margin, dan role user.</p></div>
+        <div class="card"><div class="icon">🛍️</div><h3>E-Commerce UMKM</h3><p>Website toko online dengan katalog, checkout, payment, dan database pelanggan.</p></div>
+        <div class="card"><div class="icon">📊</div><h3>Digital Marketing</h3><p>Google Ads, landing page, tracking konversi, dan strategi lead generation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimoni">
+    <div class="container">
+      <div class="section-head">
+        <h2>Testimoni Klien</h2>
+        <p>Beberapa feedback natural dari klien yang membutuhkan website, landing page, sistem, dan digital marketing.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Awalnya cuma mau bikin website sederhana, tapi setelah diskusi jadi lebih kebayang harus ada CTA, form, dan arah ke WhatsApp. Hasilnya terlihat lebih profesional dan enak dibuka dari HP.”</p>
+          <div class="client"><div class="avatar">A</div><div><b>Andri</b><small>Owner UMKM</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Landing page untuk promo mobilnya cukup membantu. Struktur halamannya jelas, tombol WhatsApp mudah ditemukan, dan materi iklan jadi lebih siap dipakai untuk campaign.”</p>
+          <div class="client"><div class="avatar">R</div><div><b>Rizky</b><small>Sales Otomotif</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Yang saya suka, dijelaskan pelan-pelan dari kebutuhan bisnisnya dulu. Jadi bukan langsung ditawari fitur banyak, tapi dipilih mana yang paling penting untuk tahap awal.”</p>
+          <div class="client"><div class="avatar">D</div><div><b>Dede</b><small>Bisnis Retail</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Proses komunikasinya enak. Revisi juga diarahkan supaya website bukan cuma bagus dilihat, tapi lebih mudah dipakai calon pelanggan untuk bertanya dan konsultasi.”</p>
+          <div class="client"><div class="avatar">M</div><div><b>Metha</b><small>Marketing Properti</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Kami butuh gambaran sistem POS dan inventory. Dibantu breakdown fitur, alur user, sampai kebutuhan dashboard owner. Jadi lebih mudah menjelaskan ke tim internal.”</p>
+          <div class="client"><div class="avatar">F</div><div><b>Fajar</b><small>Owner Multi Cabang</small></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Bantuan untuk Google Ads dan landing page cukup detail. Bukan hanya bikin iklan, tapi juga diperhatikan halaman tujuan, keyword, CTA, dan cara membaca hasilnya.”</p>
+          <div class="client"><div class="avatar">K</div><div><b>Khozain</b><small>Tim Sales & Ads</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pertanyaan yang Sering Ditanyakan</h2>
+        <p>Beberapa hal yang biasanya ditanyakan sebelum mulai proyek.</p>
+      </div>
+      <div class="faq-wrap">
+        <details open>
+          <summary>Berapa lama pengerjaan website?</summary>
+          <p>Rata-rata 7–30 hari kerja, tergantung jumlah halaman, fitur, materi konten, dan tingkat kompleksitas desain.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa konsultasi dulu sebelum pesan?</summary>
+          <p>Bisa. Konsultasi awal gratis untuk memahami kebutuhan bisnis dan menentukan solusi yang paling tepat.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa membuat aplikasi custom?</summary>
+          <p>Bisa. Kami dapat membantu membuat aplikasi web custom seperti POS, ERP, HR, CRM, dashboard, dan sistem operasional lainnya.</p>
+        </details>
+        <details>
+          <summary>Apakah website bisa diintegrasikan dengan WhatsApp?</summary>
+          <p>Bisa. Kami dapat menambahkan tombol WhatsApp, form lead, pesan otomatis, dan tracking klik WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa bantu Google Ads juga?</summary>
+          <p>Bisa. Kami dapat membantu setup campaign, keyword, landing page, dan conversion tracking untuk meningkatkan peluang lead.</p>
+        </details>
+        <details>
+          <summary>Apakah tersedia maintenance?</summary>
+          <p>Tersedia paket maintenance bulanan atau tahunan untuk update, backup, monitoring, dan bantuan teknis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <div class="eyebrow">📞 Siap Diskusi?</div>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.06em; line-height: 1.12; margin-bottom: 14px;">Yuk, Bangun Sistem Digital yang Lebih Serius untuk Bisnis Anda.</h2>
+          <p style="color: var(--muted);">Ceritakan kebutuhan bisnis Anda. Kami bantu arahkan solusi yang paling cocok, mulai dari website, landing page, aplikasi, automation, sampai digital marketing.</p>
+          <div class="contact-list">
+            <div class="contact-item">👤 Ilham Rusli</div>
+            <div class="contact-item">📱 WhatsApp / Telp: 0857-8203-0090</div>
+            <div class="contact-item">✉️ Email: ilham_rusli@yahoo.com</div>
+            <div class="contact-item">🌐 Website: digital-mandiri.com</div>
+          </div>
+          <br>
+          <a class="btn btn-whatsapp" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20digital%20untuk%20bisnis%20saya." target="_blank" rel="noopener">Chat WhatsApp Sekarang</a>
+        </div>
+
+        <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+          <label for="nama">Nama</label>
+          <input id="nama" type="text" placeholder="Nama Anda" required>
+
+          <label for="bisnis">Jenis Bisnis</label>
+          <input id="bisnis" type="text" placeholder="Contoh: Dealer mobil, UMKM, pabrik" required>
+
+          <label for="layananForm">Kebutuhan</label>
+          <select id="layananForm" required>
+            <option value="">Pilih kebutuhan</option>
+            <option>Website Company Profile</option>
+            <option>Landing Page</option>
+            <option>E-Commerce</option>
+            <option>Web App Custom</option>
+            <option>ERP / POS / HR</option>
+            <option>AI Automation</option>
+            <option>Google Ads / SEO</option>
+          </select>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" rows="4" placeholder="Ceritakan singkat kebutuhan Anda"></textarea>
+
+          <button class="btn btn-primary" style="width:100%;" type="submit">Kirim ke WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Karya Digital Mandiri. Solusi Digital All-in-One untuk Bisnis Anda.</p>
+    </div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/6285782030090?text=Halo%20Pak%20Ilham%2C%20saya%20ingin%20konsultasi%20mengenai%20solusi%20digital%20untuk%20bisnis%20saya." target="_blank" rel="noopener" aria-label="Chat WhatsApp">☘</a>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      const 
